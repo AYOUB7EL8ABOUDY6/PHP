@@ -1,0 +1,63 @@
+//  echo 'ici nous somme le:'. date("Y/m/d h:i:s A");/* echo is used to output a text ,Y stands for year,m stands for month d stands for day ,h:hour,i:minutes,s:seconds,A:AM*/
+// echo "<br>";
+
+// $t= date('s');/*I created a var called t, used the date function(i which means minutes) */
+// if($t<30){ /*here it's a if statment that says if the $t is less than 58 u shall type hallo beauty esle(if not type hiiiiiii beauty) */
+//  echo"hallo there";
+// }
+//  else {
+//      echo"hiiiiii there";
+//  }
+
+//  echo "Today is " . date("Y/M/D") . "<br>"; /*here we typed today is and with the date function we showed the current year,month,and day */
+// echo "Today is " . date("Y.m.d") . "<br>";
+// echo "Today is " . date("Y-m-d") . "<br>";
+// echo "Today is " . date("l");/*l outputs the day for you (tuesday)*/
+// echo "<br>";
+
+// $d=mktime(11, 14, 54, 8, 12, 2018); /*This example creates a date and time with the date() function from a number of parameters in the mktime() function: */
+// echo "Created date is " . date("Y-m-d h:i:sa", $d);
+// // echo "<br>";
+
+// date_default_timezone_set("japan");/*this example creates the current time with the date() function from the timezone in the date_default_timezone_set() function */
+// echo "The time is " . date("h:i:sa");
+// echo"<br>";
+
+// $d=strtotime("10:30pm April 15 2020");/*strtotime() function is used to convert a human readable date string into a Unix timestamp  */
+// echo "Created date is " . date("Y-m-d h:i:sa", $d);/*this creates a date and time from the strtotime() function: */
+// echo "<br>";
+
+/*PHP is quite clever about converting a string to a date, so you can put in various values: */
+// $d=strtotime("tomorrow");
+// echo date("Y-m-d h:i:sa", $d) . "<br>";
+
+// $d=strtotime("next Saturday");
+// echo date("Y-m-d h:i:sa", $d) . "<br>";
+
+// $d=strtotime("+3 Months");
+// echo date("Y-m-d h:i:sa", $d) . "<br>";
+// echo "<br>";
+
+/*This example outputs the dates for the next six Saturdays */
+// $startdate = strtotime("Saturday");
+// $enddate = strtotime("+6 weeks", $startdate);
+
+// while ($startdate < $enddate) {/*while the startdate is smaller than the enddate create using the date function the month and day of the startdate ya3ni each saturday that exists in the next 6 weeks   */
+//   echo date("M d", $startdate) . "<br>";
+//   $startdate = strtotime("+1 week", $startdate);/*galih add each time one week */
+//  }
+// echo "<br>";
+
+/*This example outputs the number of days until 19th of July*/
+$d1=strtotime("July 19");
+$d2=ceil(($d1-time())/60/60/24);/*The ceil() function rounds a number UP to the nearest integer, if necessary. */
+echo "There are " . $d2 ." days until 19th of July.";
+// // echo "<br>";
+
+/*example to understand ceil better*/
+echo(ceil(0.60) . "<br>");
+echo(ceil(0.40) . "<br>");
+echo(ceil(5) . "<br>");
+echo(ceil(5.4) . "<br>");
+echo(ceil(-5.1) . "<br>");
+echo(ceil(-5.9));
